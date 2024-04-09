@@ -24,6 +24,8 @@ body {
     width: 100px;
     height: 100vh;
     border-radius: 0 20px 20px 0;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 
 .nav ul {
@@ -35,7 +37,7 @@ body {
     list-style: none;
     text-align: center;
     cursor: pointer;
-    margin: 50px 0;
+    margin: 75px 0;
 }
 
 .nav li:first-child {
@@ -179,4 +181,22 @@ body {
 
 .main-tile {
     margin-left: 65px;
+}
+
+.main-tile-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.main-tile-contact h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.main-tile-contact p {
+    font-size: 1.5rem;
+    color: #555555;
 }
