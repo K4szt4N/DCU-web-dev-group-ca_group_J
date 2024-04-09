@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* Overall */
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Navbar */
+.nav {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 100vh; /* This will make the navbar take up the full height of the viewport */
+}
+
+/* Search bar */
+
+.search_bar {
+    width: 20%;
+    height: 30px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search_bar input {
+    border: none;
+    background-color: transparent;
+    all: unset;
+    outline: none;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    border-radius: 25px;
+}
+
+.search_bar button {
+    color: #fff;
+    all: unset;
+    border: none;
+    border-radius: 25px;
+    padding: 0 10px;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.search_bar button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.search_bar input::placeholder {
+    color: #555555;
+}
+
+.search_bar input:focus {
+    border: none;
+    outline: none;
+    background: #f1f1f1;
+}
+
+.search_bar button:hover {
+    background-color: #555555;
+}
+
+/* Widget */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    height: 80vh;
+}
+
+.widget {
+    flex: 1;
+    height: 40vh;
+    background: white;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+}
