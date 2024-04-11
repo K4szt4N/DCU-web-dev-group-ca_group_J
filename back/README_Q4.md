@@ -23,12 +23,13 @@ The application will start running at `http://localhost:8081`.
 
 ## Usage
 
-1. Open the web page at `http://localhost:8081`
-2. Moving the mouse over the left navigator button "Administer" will reveal the left side navigator bar.
-3. Click on "Manage Rooms".
-4. Click on "Rooms Information Inquire" to room information by input it room_id. Check the `roomData.json` in the resource file to get the room_id.
-5. After the room information is show, Click on "Hotel name" to inquire this hotel's information.
-6. After the add operation, check the files `hotelData.json` or `roomData.json` in the resource file to see if the information show was correctly.
+1. Start the server
+2. Configure application.properties to connect to the right database with the right access info.
+3. Configure WebConfig.Java to accept file from your frontEnd (exemple: localHost:8080)
+4. the port for registering is `http://localhost:8081/auth/register` and need to received a post json
+5. the port for login is `http://localhost:8081/auth/login` and need a json with the name and the password.
+
+
 
 ## File Structure
 

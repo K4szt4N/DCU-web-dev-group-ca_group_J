@@ -19,10 +19,10 @@ import java.util.Optional;
 @RestController
 // add @RestController annotation to define the controller of this service, which would handle the HTTP requests.
 public class Controller {
-    //Doa object, for data operation.
+    // Doa object, for data operation.
     private final DoaMysql doaMysql;
 
-    //constructor
+    // constructor
     // add @Autowired annotation to inject dependencies, which is the Doa object bean here.
     @Autowired
     public Controller(DoaMysql doaMysql) {

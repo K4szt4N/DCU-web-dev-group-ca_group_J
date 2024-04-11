@@ -29,6 +29,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+
 		<!--		add the mysql server connector to connect mysql-->
 		<!--		if we need to connect other database servers, then we need add related dependency of that server.-->
 		<dependency>
