@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Page</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/register_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <p>Provide below details to create an account</p>
+      <form id="registerForm">
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Full Name"
+        />
+        <input type="email" id="email" name="email" placeholder="Email" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+        />
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+        />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#">Login</a></p>
+    </div>
+
+    <script src="Script/register_script.js"></script>
+  </body>
+</html>
