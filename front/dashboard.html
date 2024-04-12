@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>EE417</title>
+  <link rel="stylesheet" type="text/css" href="styles/Dashboard.css">
+  <script src="./scripts/script.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line'] });
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart2);
+    google.charts.setOnLoadCallback(drawChart3);
+    google.charts.setOnLoadCallback(drawChart4);
+    google.charts.setOnLoadCallback(drawChart5);
+    google.charts.setOnLoadCallback(drawChart6);
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="index.html">
+          <img src="assets/icons8-home.svg" alt="home icon">
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <img src="assets/icons8-board.svg" alt="dashboard icon">
+          </a>
+        </li>
+        <li>
+          <a href="">
+          <img src="assets/icons8-login.svg" alt="login icon">
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="assets/icons8-register.svg" alt="register icon">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <img src="assets/icons8-contact.svg" alt="contact icon">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="dashboard">
+      <div class="search_bar">
+        <button>
+          <img src="assets/icons8-search.svg" alt="search icon">
+        </button>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="main-tile">
+        <h1>
+          Main Dashboard
+        </h1>
+      </div>
+      <div class="dashboard-containers">
+        <div class="container-dashboard">
+          <div class="widget-dashboard">
+            <h2>Table 1</h2>
+            <div id="donut_single" style="width: 320px; height: 300px;"></div>
+          </div>
+          <div class="widget-dashboard">
+            <h2>Table 2</h2>
+            <div id="top_x_div" style="width: 320px; height: 300px;"></div>
+          </div>
+          <div class="widget-dashboard">
+            <h2>Table 3</h2>
+            <div id="donutchart" style="width: 320px; height: 300px;"></div>
+          </div>
+          <div class="widget-dashboard">
+            <h2>Table 4</h2>
+            <div id="piechart_3d" style="width: 320px; height: 300px;"></div>
+          </div>
+        </div>
+        <div class="container-dashboard2">
+          <div class="widget-dashboard">
+            <h2>Table 5</h2>
+            <div id="line_top_x"></div>
+          </div>
+          <div class="widget-dashboard">
+            <h2>Table 6</h2>
+            <div id="columnchart_material" style="width: 620px; height: 300px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
