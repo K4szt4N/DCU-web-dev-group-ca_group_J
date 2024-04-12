@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background:linear-gradient(rgba(0,0,0,0.5),#86e6f2), url(../Images/DCU.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container{
+  margin-top: 3%;
+}
+
+.container h1{
+  font-family: 'Allura', cursive;
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap:wrap;
+}
+
+.team .member{
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #8e8b8b;  
+  position: relative;
+  box-shadow: 0px 3px 8px #030302;
+  transition: 300ms ease-in-out;
+}
+
+.team .member:hover{
+  box-shadow: 0px 8px 40px #31f0d6;
+  width: 303px;
+}
+
+.team .member h3{
+  color: #81c644;
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .member p.role{
+  color: #ccc;
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.team .member .team_image{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team .member .team_image img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
