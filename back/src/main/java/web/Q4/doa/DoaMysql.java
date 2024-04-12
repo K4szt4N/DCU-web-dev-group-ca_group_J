@@ -104,4 +104,59 @@ public class DoaMysql {
                 });
         return Optional.ofNullable(studentAverageAge);
     }
+
+    public Optional<Air_quality> getAirQuality(int reading_id) {
+
+        // define the sql order to find the user information by their username
+        final String sql = "select * from air_quality where reading_id = ?";
+
+        // if user exit, assignment the user information to a User object.
+        Air_quality airQuality = jdbcTemplate.queryForObject(
+                sql,
+                new Object[]{reading_id},
+                (resultSet, i) -> {
+                    int reading__id = resultSet.getInt("reading_id");
+                    BigDecimal pm2_5 = resultSet.getBigDecimal("pm2_5");
+                    BigDecimal pm10 = resultSet.getBigDecimal("pm10");
+                    BigDecimal temperature = resultSet.getBigDecimal("temperature");
+                    BigDecimal humidity = resultSet.getBigDecimal("humidity");
+                    String date = String.valueOf(resultSet.getDate("date"));
+                    String time = String.valueOf(resultSet.getTime("time"));
+                    String building = resultSet.getString("building");
+
+                    return new Air_quality(reading__id, pm2_5, pm10, temperature, humidity, date, time, building);
+                });
+
+        // return the User object if it exit, or return null.
+        return Optional.ofNullable(airQuality);
+    }
+
+    public Optional<Student_study_performance> getStudentPerformance(int row_id) {
+
+        // define the sql order to find the user information by their username
+        final String sql = "select * from student_study_performance where row_id = ?";
+
+        // if user exit, assignment the user information to a User object.
+        Student_study_performance studentStudyPerformance = jdbcTemplate.queryForObject(
+                sql,
+                new Object[]{row_id},
+                (resultSet, i) -> {
+                    int row__id = resultSet.getInt("row_id");
+                    String gender = resultSet.getString("gender");
+                    String race_ethnicity = resultSet.getString("race_ethnicity");
+                    String parental_level_of_education = resultSet.getString("parental_level_of_education");
+                    String lunch = resultSet.getString("lunch");
+                    String test_preparation_course = resultSet.getString("test_preparation_course");
+                    int math_score = resultSet.getInt("math_score");
+                    int reading_score = resultSet.getInt("reading_score");
+                    int writing_score = resultSet.getInt("writing_score");
+
+                    return new Student_study_performance(row__id, gender, race_ethnicity, parental_level_of_education,
+                            lunch, test_preparation_course, math_score, reading_score, writing_score);
+                });
+
+        // return the User object if it exit, or return null.
+        return Optional.ofNullable(studentStudyPerformance);
+    }
+
 }
