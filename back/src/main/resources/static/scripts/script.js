@@ -133,7 +133,8 @@ function drawChart4() {
 
 function drawChart5() {
   // Fetch data from the Java server
-  fetch('http://localhost:8081/require/StudentAge/all').then(response => {console.log(response)})
+  fetch('http://localhost:8081/require/StudentAge/all')
+    .then(response => response.json())
     .then(data => {
       // Create a DataTable and add columns
       var chartData = new google.visualization.DataTable();
@@ -147,16 +148,15 @@ function drawChart5() {
 
       // Define chart options
       var options = {
-        chart: {
-          title: 'Average Age Over the Years',
-          subtitle: 'in years'
-        },
         width: 620,
         height: 300,
-        axes: {
-          x: {
-            0: { side: 'top' }
-          }
+        hAxis: {
+          side: 'bottom',
+          format: '0',
+        },
+        vAxis: {
+          side: 'top',
+          format: 'decimal',
         }
       };
 
@@ -219,10 +219,10 @@ function drawChart7() {
 function drawChart8() {
   var data = google.visualization.arrayToDataTable([
     ['Year', 'Sales', 'Expenses'],
-    ['2013',  1000,      400],
-    ['2014',  1170,      460],
-    ['2015',  660,       1120],
-    ['2016',  1030,      540]
+    ['2013', 1000, 400],
+    ['2014', 1170, 460],
+    ['2015', 660, 1120],
+    ['2016', 1030, 540]
   ]);
 
   var options = {
