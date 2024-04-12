@@ -13,7 +13,7 @@
       <ul>
         <li>
           <a href="index.html">
-          <img src="assets/icons8-home.svg" alt="home icon">
+            <img src="assets/icons8-home.svg" alt="home icon">
           </a>
         </li>
         <li>
@@ -23,7 +23,7 @@
         </li>
         <li>
           <a href="">
-          <img src="assets/icons8-login.svg" alt="login icon">
+            <img src="assets/icons8-login.svg" alt="login icon">
           </a>
         </li>
         <li>
@@ -48,6 +48,17 @@
         <p>
           Any question or remarks? Just write us a message!
         </p>
+      </div>
+      <div class="contact-form">
+        <form action="contact.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Submit">
+        </form>
       </div>
     </div>
   </div>

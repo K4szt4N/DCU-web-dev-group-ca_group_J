@@ -131,6 +131,45 @@ function drawChart5() {
   chart.draw(data, google.charts.Line.convertOptions(options));
 };
 
+// function drawChart5() {
+//   // Fetch data from the Java server
+//   fetch('URL_TO_YOUR_JAVA_SERVER')
+//     .then(response => response.json())
+//     .then(data => {
+//       // Create a DataTable and add columns
+//       var chartData = new google.visualization.DataTable();
+//       chartData.addColumn('number', 'Year');
+//       chartData.addColumn('number', 'Average Age');
+
+//       // Add rows from the fetched data
+//       data.forEach(entry => {
+//         chartData.addRow([parseInt(entry.year), parseFloat(entry.average_age)]);
+//       });
+
+//       // Define chart options
+//       var options = {
+//         chart: {
+//           title: 'Average Age Over the Years',
+//           subtitle: 'in years'
+//         },
+//         width: 620,
+//         height: 300,
+//         axes: {
+//           x: {
+//             0: { side: 'top' }
+//           }
+//         }
+//       };
+
+//       // Instantiate and draw the chart
+//       var chart = new google.charts.Line(document.getElementById('line_top_x'));
+//       chart.draw(chartData, google.charts.Line.convertOptions(options));
+//     })
+//     .catch(error => {
+//       console.error('Error fetching data:', error);
+//     });
+// }
+
 function drawChart6() {
   var data = google.visualization.arrayToDataTable([
     ['Year', 'Sales', 'Expenses', 'Profit'],
