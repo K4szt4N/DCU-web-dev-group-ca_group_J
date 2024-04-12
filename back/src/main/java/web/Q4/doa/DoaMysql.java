@@ -36,6 +36,19 @@ public class DoaMysql {
         return users;
     }
 
+    public List<Bicycle_travel_time> getAllBikeTime() {
+        final String sql = "SELECT * FROM bicycle_travel_time";
+        List<Bicycle_travel_time> BikeTime = jdbcTemplate.query(sql, (resultSet, i) -> {
+            int row_id = resultSet.getInt("row_id");
+            String age_group = resultSet.getString("age_group");
+            String gender = resultSet.getString("gender");
+            int year = resultSet.getInt("year");
+            BigDecimal value = resultSet.getBigDecimal("value");
+            return new Bicycle_travel_time(row_id, age_group,  gender, year, value);
+        });
+        return BikeTime;
+    }
+
     public Optional<User> getUser(String f_name) {
         final String sql = "SELECT * FROM user WHERE f_name = ?";
         User user = jdbcTemplate.queryForObject(
@@ -73,6 +86,8 @@ public class DoaMysql {
                 });
         return Optional.ofNullable(bicycleTravelTime);
     }
+
+    
 
     public Optional<Class_occupancy> getClassOccupancy(int row_id) {
         final String sql = "SELECT * FROM Class_occupancy WHERE row_id = ?";

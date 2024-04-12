@@ -12,6 +12,9 @@ import web.Q4.model.Student_average_age;
 import web.Q4.model.User;
 import java.io.IOException;
 import java.util.Optional;
+import java.util.List;
+
+
 
 // This class serves as the API controller for handling HTTP requests related to requiring rooms and hotels
 // add @RequestMapping() annotation to map HTTP requests.
@@ -35,6 +38,12 @@ public class Controller {
     public Optional<User> getUser(@PathVariable("f_name") String f_name) throws IOException {
         System.out.println("receive the get information");
         return doaMysql.getUser(f_name);
+    }
+
+    @GetMapping(path = "/BikeTime/all")
+    public List<Bicycle_travel_time> getAllBikeTime() throws IOException {
+        System.out.println("Receive the get all bike time information");
+        return doaMysql.getAllBikeTime();
     }
 
     @GetMapping( path = "/BikeTime/{row_id}")
