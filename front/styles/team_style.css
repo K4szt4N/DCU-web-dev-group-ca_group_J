@@ -9,19 +9,24 @@
 body{
   background-size: cover;
   background-position: center;
+  height: 100vh;
   font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+
 }
 
-.container{
+.container2{
   margin-top: 3%;
+  padding-left: 10%;
+  width: 100%;
+
 }
 
-.container h1{
+.container2 h1{
   font-family: 'Allura', cursive;
-  font-size: 52px;
-  margin-bottom: 60px;
+  font-size: 3rem;
+  margin-bottom: 20px;
   text-align: center;
-  color: #fff;
 }
 
 .team{
@@ -29,29 +34,32 @@ body{
   justify-content: center;
   width: auto;
   text-align: center;
+  gap: 10px;
   flex-wrap:wrap;
 }
 
-.team .member{
+.member{
   background: #fff;
-  margin: 5px;
-  margin-bottom: 50px;
-  width: 300px;
+  margin: 5px 5px 20px;
+  width: 280px;
   padding: 20px;
   line-height: 20px;
   color: #8e8b8b;  
   position: relative;
-  box-shadow: 0px 3px 8px #030302;
+    border-radius: 5px;
+    box-shadow: 0px 8px 20px  ;
   transition: 300ms ease-in-out;
+  max-height: 35vh;
+    overflow: auto;
 }
 
 .team .member:hover{
-  box-shadow: 0px 8px 40px #31f0d6;
-  width: 303px;
+  /*box-shadow: 0px 8px 40px #31f0d6;*/
+  /*width: 303px;*/
 }
 
 .team .member h3{
-  color: #81c644;
+    color: #333333;
   font-size: 26px;
   margin-top: 50px;
 }
@@ -78,4 +86,8 @@ body{
   width: 100px;
   height: 100px;
   padding: 5px;
+}
+
+.member:hover{
+  scale: 1.1;
 }
