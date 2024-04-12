@@ -54,4 +54,16 @@ public class Controller {
         System.out.println("receive the get information");
         return doaMysql.getStudentAge(row_id);
     }
+
+    @GetMapping( path = "/StudentPerformance/{row_id}")
+    public Optional<Student_study_performance> getStudentPerformance(@PathVariable("row_id") int row_id) throws IOException {
+        System.out.println("receive the get information");
+        return doaMysql.getStudentPerformance(row_id);
+    }
+
+    @GetMapping( path = "/AirQuality/{reading_id}")
+    public Optional<Air_quality> getAirQuality(@PathVariable("reading_id") int reading_id) throws IOException {
+        System.out.println("receive the get information");
+        return doaMysql.getAirQuality(reading_id);
+    }
 }
