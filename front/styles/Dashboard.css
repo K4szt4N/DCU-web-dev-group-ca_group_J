@@ -19,6 +19,7 @@ body {
     /*justify-content: center;*/
     /*align-items: center;*/
     /*padding: 20px;*/
+    margin-left: 8rem;
 }
 /* Navbar */
 .nav {
@@ -30,6 +31,10 @@ body {
     border-radius: 0 20px 20px 0;
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
+    /* No scroll */
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav ul {
