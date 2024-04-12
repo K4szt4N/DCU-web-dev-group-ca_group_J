@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Class_occupancy {
     //Define all the user characters.
     // username
-    private final int user_id;
+    private final int row_id;
     private final String room_number;
     private final int number_of_students;
     private final String room_type;
@@ -14,8 +14,8 @@ public class Class_occupancy {
     // role
     private final String date;
 
-    public int getUser_id() {
-        return user_id;
+    public int getRow_id() {
+        return row_id;
     }
 
     public String getRoom_number() {
@@ -42,13 +42,13 @@ public class Class_occupancy {
     // for each constructor parameter, add a "@JsonProperty()" annotation to map Java object properties to JSON keys.
     // after this annotation, this class can used directly to receive a Json massages or send one.
 
-    public Class_occupancy(@JsonProperty("user_id") int user_id,
+    public Class_occupancy(@JsonProperty("row_id") int row_id,
                            @JsonProperty("String room_number") String room_number,
                            @JsonProperty("number_of_students") int number_of_students,
                            @JsonProperty("room_type") String room_type,
                            @JsonProperty("time") String time,
                            @JsonProperty("date") String date) {
-        this.user_id = user_id;
+        this.row_id = row_id;
         this.room_number = room_number;
         this.number_of_students = number_of_students;
         this.room_type = room_type;
