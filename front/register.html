@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Register Page</title>
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/register_style.css" />
-  </head>
-  <body>
-    <div class="container">
+
+<head>
+  <title>Register Page</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/register_style.css" />
+  <link rel="stylesheet" href="styles/Dashboard.css" />
+</head>
+
+<body>
+  <div class="main">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="index.html">
+            <img src="assets/icons8-home.svg" alt="home icon">
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <img src="assets/icons8-board.svg" alt="dashboard icon">
+          </a>
+        </li>
+        <li>
+          <a href="login.html">
+            <img src="assets/icons8-login.svg" alt="login icon">
+          </a>
+        </li>
+        <li>
+          <a href="register.html">
+            <img src="assets/icons8-register.svg" alt="register icon">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <img src="assets/icons8-contact.svg" alt="contact icon">
+          </a>
+        </li>
+        <li>
+          <a href="team.html">
+            <img src="assets/icons8-team.svg" alt="team icon">
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container2">
+      <div class="form-contact">
       <h1>Register</h1>
       <p>Provide below details to create an account</p>
       <form id="registerForm">
-        <input
-          type="text"
-          id="fullname"
-          name="fullname"
-          placeholder="Full Name"
-        />
+        <input type="text" id="fullname" name="fullname" placeholder="Full Name" />
         <input type="email" id="email" name="email" placeholder="Email" />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-        />
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-        />
+        <input type="password" id="password" name="password" placeholder="Password" />
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
         <button type="submit">Register</button>
       </form>
-      <p>Already have an account? <a href="#">Login</a></p>
+      <p>Already have an account? <a href="register.html">Login</a></p>
     </div>
+  </div>
+</div>
 
-    <script src="scripts/register_script.js"></script>
-  </body>
+  <script src="scripts/register_script.js"></script>
+</body>
+
 </html>

@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login Page</title>
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/login_style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Login</h1>
-      <p>Provide login credentials</p>
-      <form id="loginForm">
-        <input type="email" id="email" name="email" placeholder="Username" />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-        />
-        <!-- <p>Or continue with</p>
+
+<head>
+  <title>Login Page</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/login_style.css" />
+  <link rel="stylesheet" href="styles/Dashboard.css" />
+</head>
+
+<body>
+  <div class="main">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="index.html">
+            <img src="assets/icons8-home.svg" alt="home icon">
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <img src="assets/icons8-board.svg" alt="dashboard icon">
+          </a>
+        </li>
+        <li>
+          <a href="login.html">
+            <img src="assets/icons8-login.svg" alt="login icon">
+          </a>
+        </li>
+        <li>
+          <a href="register.html">
+            <img src="assets/icons8-register.svg" alt="register icon">
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <img src="assets/icons8-contact.svg" alt="contact icon">
+          </a>
+        </li>
+        <li>
+          <a href="team.html">
+            <img src="assets/icons8-team.svg" alt="team icon">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container2">
+      <div class="form-contact">
+        <h1>Login</h1>
+        <p>Provide login credentials</p>
+        <form id="loginForm">
+          <input type="email" id="email" name="email" placeholder="Username" />
+          <input type="password" id="password" name="password" placeholder="Password" />
+          <!-- <p>Or continue with</p>
         <div class="social-media">
           <div class="facebook">
             <a href="#" class="fa fa-facebook-square"></a>
@@ -34,11 +66,14 @@
             <a href="#" class="fa fa-twitter"></a>
           </div>
         </div> -->
-        <button type="submit">Log in</button>
-      </form>
-      <p>You do not have an account ? <a href="#">Register</a></p>
+          <button type="submit">Log in</button>
+        </form>
+        <p>You do not have an account ? <a href="login.html">Register</a></p>
+      </div>
     </div>
+  </div>
 
-    <script src="scripts/login_script.js"></script>
-  </body>
+  <script src="scripts/login_script.js"></script>
+</body>
+
 </html>
