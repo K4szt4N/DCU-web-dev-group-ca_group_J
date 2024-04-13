@@ -8,6 +8,7 @@
   <!-- CSS -->
   <link rel="stylesheet" th:href="@{css/login_style.css}" />
   <link rel="stylesheet" th:href="@{css/Dashboard.css}" />
+  <script th:src="@{/scripts/login_script.js}"></script>
 </head>
 
 <body>
@@ -51,21 +52,9 @@
       <div class="form-contact">
         <h1>Login</h1>
         <p>Provide login credentials</p>
-        <form id="loginForm">
-          <input type="email" id="email" name="email" placeholder="Username" />
+        <form onsubmit="loginUser(event)" id="loginForm">
+          <input type="text" id="email" name="email" placeholder="Username" />
           <input type="password" id="password" name="password" placeholder="Password" />
-          <!-- <p>Or continue with</p>
-        <div class="social-media">
-          <div class="facebook">
-            <a href="#" class="fa fa-facebook-square"></a>
-          </div>
-          <div class="google">
-            <a href="#" class="fa fa-google"></a>
-          </div>
-          <div class="twitter">
-            <a href="#" class="fa fa-twitter"></a>
-          </div>
-        </div> -->
           <button type="submit">Log in</button>
         </form>
         <p>You do not have an account ? <a href="login">Register</a></p>
@@ -73,7 +62,6 @@
     </div>
   </div>
 
-  <script src="scripts/login_script.js"></script>
 </body>
 
 </html>

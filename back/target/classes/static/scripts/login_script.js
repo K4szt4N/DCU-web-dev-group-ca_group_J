@@ -1,29 +1,25 @@
-document.getElementById("loginForm").addEventListener("submit", function (event) {
+function loginUser(event) {
   event.preventDefault();
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  console.log("Email:", email);
-  console.log("Password:", password);
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  fetch('http://localhost:8081/login', {
+  fetch(`http://localhost:8081/auth/login?f_name=${email}&password=${password}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      email: email,
-      password: password
-    })
   })
     .then(response => {
       if (response.status === 200) {
         console.log("Login successful");
+        alert("Login successful");
         window.location.href = "http://localhost:8081/";
       } else {
+        alert("Login failed");
         console.log("Login failed");
       }
     })
     .catch(error => {
       console.error('Error logging in:', error);
     });
-});
+}
