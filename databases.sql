@@ -3,7 +3,7 @@ create table user
 user_id INTEGER AUTO_INCREMENT,  -- autoincrement PK, varchar sizes set to reasonable lengths for those fields, to save database space
 f_name varchar(50) NOT NULL,
 l_name varchar(50),
-email varchar(50) NOT NULL,
+email varchar(50) NOT NULL UNIQUE,
 password varchar(30) NOT NULL,
 user_role varchar(30) NOT NULL,
 primary key(user_id)
