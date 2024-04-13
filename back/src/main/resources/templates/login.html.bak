@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Register Page</title>
+  <title>Login Page</title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <!-- CSS -->
-  <link rel="stylesheet" th:href="@{css/register_style.css}" />
+  <link rel="stylesheet" th:href="@{css/login_style.css}" />
   <link rel="stylesheet" th:href="@{css/Dashboard.css}" />
-  <script th:src="@{/scripts/register_script.js}"></script>
+  <script th:src="@{/scripts/login_script.js}"></script>
 </head>
 
 <body>
@@ -47,23 +47,20 @@
         </li>
       </ul>
     </nav>
+
     <div class="container2">
       <div class="form-contact">
-      <h1>Register</h1>
-      <p>Provide below details to create an account</p>
-      <form onsubmit="registerUser(event)" id="registerForm">
-        <input type="text" id="f_name" name="f_name" placeholder="First Name" />
-        <input type="text" id="l_name" name="l_name" placeholder="Last Name" />
-        <input type="email" id="email" name="email" placeholder="Email" />
-        <input type="password" id="password" name="password" placeholder="Password" />
-        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
-        <input type="text" id="user_role" name="user_role" placeholder="admin" />
-        <button type="submit">Register</button>
-      </form>
-      <p>Already have an account? <a href="login">Login</a></p>
+        <h1>Login</h1>
+        <p>Provide login credentials</p>
+        <form onsubmit="loginUser(event)" id="loginForm">
+          <input type="text" id="email" name="email" placeholder="Username" />
+          <input type="password" id="password" name="password" placeholder="Password" />
+          <button type="submit">Log in</button>
+        </form>
+        <p>You do not have an account ? <a href="login">Register</a></p>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 
