@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EE417</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}" />
+    <script th:src="@{/scripts/script.js}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart', 'bar', 'line', 'table'] });
+        google.charts.setOnLoadCallback(showSchoolOccupationWidget);
+    </script>
+</head>
+<body>
+<div class="main">
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="/">
+                    <img src="assets/icons8-home.svg" alt="home icon">
+                </a>
+            </li>
+            <li>
+                <a href="dashboard">
+                    <img src="assets/icons8-board.svg" alt="dashboard icon">
+                </a>
+            </li>
+            <li>
+                <a href="login">
+                    <img src="assets/icons8-login.svg" alt="login icon">
+                </a>
+            </li>
+            <li>
+                <a href="register">
+                    <img src="assets/icons8-register.svg" alt="register icon">
+                </a>
+            </li>
+            <li>
+                <a href="contact">
+                    <img src="assets/icons8-contact.svg" alt="contact icon">
+                </a>
+            </li>
+            <li>
+                <a href="team">
+                    <img src="assets/icons8-team.svg" alt="team icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="dashboard">
+        <div class="search_bar">
+            <button>
+                <img src="assets/icons8-search.svg" alt="search icon">
+            </button>
+            <input type="text" placeholder="Search">
+        </div>
+        <div id="school_occupation1" class="page_widget"></div>
+    </div>
+</div>
+</body>
+</html>
