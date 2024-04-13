@@ -10,4 +10,29 @@ public class DashboardController {
     public String showDashboard() {
         return "dashboard"; // Return the name of your HTML template file (without the extension)
     }
+
+    @GetMapping("/airQuality")
+    public String showAirQuality() {
+        return "airQuality";
+    }
+
+    @GetMapping("/classOccupancy")
+    public String showClassOccupancy() {
+        return "classOccupancy";
+    }
+
+    @GetMapping("/bikeTime")
+    public String showBikeTime() {
+        return "bikeTime";
+    }
+
+    @GetMapping("/studentAge")
+    public String showStudentAge() {
+        return "studentAge";
+    }
+
+    @GetMapping("/performance")
+    public String showPerformance() {
+        return "performance";
+    }
 }

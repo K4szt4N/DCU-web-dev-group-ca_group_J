@@ -219,3 +219,16 @@ body {
     font-size: 1.5rem;
     color: #555555;
 }
+
+.page_widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 70vw;
+    height: 70vh;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
