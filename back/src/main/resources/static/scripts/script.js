@@ -17,35 +17,46 @@ function drawChart() {
   chart.draw(data, options);
 }
 
-function drawChart2() {
-  var data = new google.visualization.arrayToDataTable([
-    ['Move', 'Percentage'],
-    ["King's pawn (e4)", 44],
-    ["Queen's pawn (d4)", 31],
-    ["Knight to King 3 (Nf3)", 12],
-    ["Queen's bishop pawn (c4)", 10],
-    ['Other', 3]
-  ]);
+function Bycycle() {
+  // Fetch data from the server
+  fetch('http://localhost:8081/require/BikeTime/all')
+    .then(response => response.json()) // Parse the response as JSON
+    .then(data => {
+      // Prepare the data for the chart
+      var chartData = new google.visualization.DataTable();
+      chartData.addColumn('string', 'Age Group');
+      chartData.addColumn('number', 'Percentage');
 
-  var options = {
-    width: 320,
-    legend: { position: 'none' },
-    chart: {
-      title: 'Chess opening moves',
-      subtitle: 'popularity by percentage'
-    },
-    axes: {
-      x: {
-        0: { side: 'top', label: 'White to move' } // Top x-axis.
-      }
-    },
-    bar: { groupWidth: "30%" }
-  };
+      // data is an array of objects with 'age_group' and 'value' properties
+      data.forEach(entry => {
+        chartData.addRow([entry.age_group, parseInt(entry.value)]);
+      });
 
-  var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-  // Convert the Classic options to Material options.
-  chart.draw(data, google.charts.Bar.convertOptions(options));
-};
+      // Define chart options
+      var options = {
+        width: 320,
+        legend: { position: 'none' },
+        axes: {
+          x: {
+            0: { side: 'bottom', label: 'Age Group' }
+          },
+          y: {
+            0: { side: 'top', label: 'Percentage' }
+          }
+        },
+        bar: { groupWidth: "40%" },
+      };
+
+      // Instantiate and draw the chart
+      var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+      // Convert the Classic options to Material options.
+      chart.draw(chartData, google.charts.Bar.convertOptions(options));
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
+
 
 function drawChart3() {
   var data = google.visualization.arrayToDataTable([
@@ -87,51 +98,7 @@ function drawChart4() {
   chart.draw(data, options);
 };
 
-// function drawChart5() {
-
-//   var data = new google.visualization.DataTable();
-//   data.addColumn('number', 'Day');
-//   data.addColumn('number', 'Guardians of the Galaxy');
-//   data.addColumn('number', 'The Avengers');
-//   data.addColumn('number', 'Transformers: Age of Extinction');
-
-//   data.addRows([
-//     [1, 37.8, 80.8, 41.8],
-//     [2, 30.9, 69.5, 32.4],
-//     [3, 25.4, 57, 25.7],
-//     [4, 11.7, 18.8, 10.5],
-//     [5, 11.9, 17.6, 10.4],
-//     [6, 8.8, 13.6, 7.7],
-//     [7, 7.6, 12.3, 9.6],
-//     [8, 12.3, 29.2, 10.6],
-//     [9, 16.9, 42.9, 14.8],
-//     [10, 12.8, 30.9, 11.6],
-//     [11, 5.3, 7.9, 4.7],
-//     [12, 6.6, 8.4, 5.2],
-//     [13, 4.8, 6.3, 3.6],
-//     [14, 4.2, 6.2, 3.4]
-//   ]);
-
-//   var options = {
-//     chart: {
-//       title: 'Box Office Earnings in First Two Weeks of Opening',
-//       subtitle: 'in millions of dollars (USD)'
-//     },
-//     width: 620,
-//     height: 300,
-//     axes: {
-//       x: {
-//         0: { side: 'top' }
-//       }
-//     }
-//   };
-
-//   var chart = new google.charts.Line(document.getElementById('line_top_x'));
-
-//   chart.draw(data, google.charts.Line.convertOptions(options));
-// };
-
-function drawChart5() {
+function StudentAge() {
   // Fetch data from the Java server
   fetch('http://localhost:8081/require/StudentAge/all')
     .then(response => response.json())
@@ -169,26 +136,45 @@ function drawChart5() {
     });
 }
 
-function drawChart6() {
-  var data = google.visualization.arrayToDataTable([
-    ['Year', 'Sales', 'Expenses', 'Profit'],
-    ['2014', 1000, 400, 200],
-    ['2015', 1170, 460, 250],
-    ['2016', 660, 1120, 300],
-    ['2017', 1030, 540, 350]
-  ]);
+function Study() {
+  // Fetch data from the server
+  fetch('http://localhost:8081/require/StudentStudy/all')
+    .then(response => response.json()) // Parse the response as JSON
+    .then(data => {
+      // Prepare the data for the chart
+      var tableData = new google.visualization.DataTable();
+      tableData.addColumn('string', 'Gender');
+      tableData.addColumn('string', 'Race/Ethnicity');
+      tableData.addColumn('string', 'Parental Level of Education');
+      tableData.addColumn('string', 'Lunch');
+      tableData.addColumn('string', 'Test Preparation Course');
+      tableData.addColumn('number', 'Math Score');
+      tableData.addColumn('number', 'Reading Score');
+      tableData.addColumn('number', 'Writing Score');
 
-  var options = {
-    chart: {
-      title: 'Company Performance',
-      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    }
-  };
+      // Assuming data is an array of objects with respective properties
+      data.forEach(entry => {
+        tableData.addRow([
+          entry.gender,
+          entry.race_ethnicity,
+          entry.parental_level_of_education,
+          entry.lunch,
+          entry.test_preparation_course,
+          parseInt(entry.math_score),
+          parseInt(entry.reading_score),
+          parseInt(entry.writing_score)
+        ]);
+      });
 
-  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+      // Instantiate and draw the table chart
+      var table = new google.visualization.Table(document.getElementById('table_div'));
+      table.draw(tableData, { showRowNumber: true, width: '100%', height: '100%' });
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
 
-  chart.draw(data, google.charts.Bar.convertOptions(options));
-};
 
 function drawChart7() {
   var data = google.visualization.arrayToDataTable([
