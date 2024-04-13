@@ -1,0 +1,13 @@
+web/Q4/model/Air_quality.class
+web/Q4/model/Student_study_performance.class
+web/Q4/doa/DoaMysql.class
+web/Q4/model/Student_average_age.class
+web/Q4/api/Controller.class
+web/Q4/api/UserController.class
+web/Q4/api/DashboardController.class
+web/Q4/model/User.class
+web/Q4/config/WebConfig.class
+web/Q4/api/AuthController.class
+web/Q4/model/Class_occupancy.class
+web/Q4/Q4Application.class
+web/Q4/model/Bicycle_travel_time.class

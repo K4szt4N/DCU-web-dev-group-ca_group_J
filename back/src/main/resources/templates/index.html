@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>EE417</title>
-  <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}">
   <script th:src="@{/scripts/script.js}"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line', 'table'] });
-    google.charts.setOnLoadCallback(Bycycle);
-    google.charts.setOnLoadCallback(StudentAge);
-    google.charts.setOnLoadCallback(Study);
+    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line'] });
+    google.charts.setOnLoadCallback(showSchoolOccupation);
+    google.charts.setOnLoadCallback(airQuality);
   </script>
 </head>
 
@@ -31,7 +32,7 @@
         </li>
         <li>
           <a href="login">
-            <img src="assets/icons8-login.svg" alt="login icon">
+          <img src="assets/icons8-login.svg" alt="login icon">
           </a>
         </li>
         <li>
@@ -40,7 +41,7 @@
           </a>
         </li>
         <li>
-          <a href="contact">
+          <a href="contactl">
             <img src="assets/icons8-contact.svg" alt="contact icon">
           </a>
         </li>
@@ -61,27 +62,20 @@
       </div>
       <div class="main-tile">
         <h1>
-          Main Dashboard
+          Home
         </h1>
       </div>
-      <div class="dashboard-containers">
-        <div class="container-dashboard">
-          <div class="div1">
-            <h2>Bike Time by Age Group</h2>
-            <div id="top_x_div" style="width: 300px; height: 300px"></div>
-          </div>
-          <div class="div2">
-            <h2>Study Performance</h2>
-            <div id="table_div" style="height: 300px; padding-bottom: 30px;"></div>
-          </div>
-          <div class="div3">
-            <h2>Average Age Of Student Over the Years</h2>
-            <div id="line_top_x"></div>
-          </div>
+      <div class="container">
+        <div class="widget widget-dashboard">
+          <h2>Table 1</h2>
+          <div id="school_occupation" style="width: 100%; height: 70%;"></div>
+        </div>
+        <div class="widget">
+          <h2>Air Quality</h2>
+            <div id="curve_chart" style="width:100%; height: 70%"></div>
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>
