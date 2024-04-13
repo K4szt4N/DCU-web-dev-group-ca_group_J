@@ -87,50 +87,6 @@ function drawChart4() {
   chart.draw(data, options);
 };
 
-// function drawChart5() {
-
-//   var data = new google.visualization.DataTable();
-//   data.addColumn('number', 'Day');
-//   data.addColumn('number', 'Guardians of the Galaxy');
-//   data.addColumn('number', 'The Avengers');
-//   data.addColumn('number', 'Transformers: Age of Extinction');
-
-//   data.addRows([
-//     [1, 37.8, 80.8, 41.8],
-//     [2, 30.9, 69.5, 32.4],
-//     [3, 25.4, 57, 25.7],
-//     [4, 11.7, 18.8, 10.5],
-//     [5, 11.9, 17.6, 10.4],
-//     [6, 8.8, 13.6, 7.7],
-//     [7, 7.6, 12.3, 9.6],
-//     [8, 12.3, 29.2, 10.6],
-//     [9, 16.9, 42.9, 14.8],
-//     [10, 12.8, 30.9, 11.6],
-//     [11, 5.3, 7.9, 4.7],
-//     [12, 6.6, 8.4, 5.2],
-//     [13, 4.8, 6.3, 3.6],
-//     [14, 4.2, 6.2, 3.4]
-//   ]);
-
-//   var options = {
-//     chart: {
-//       title: 'Box Office Earnings in First Two Weeks of Opening',
-//       subtitle: 'in millions of dollars (USD)'
-//     },
-//     width: 620,
-//     height: 300,
-//     axes: {
-//       x: {
-//         0: { side: 'top' }
-//       }
-//     }
-//   };
-
-//   var chart = new google.charts.Line(document.getElementById('line_top_x'));
-
-//   chart.draw(data, google.charts.Line.convertOptions(options));
-// };
-
 function drawChart5() {
   // Fetch data from the Java server
   fetch('http://localhost:8081/require/StudentAge/all')
@@ -190,48 +146,67 @@ function drawChart6() {
   chart.draw(data, google.charts.Bar.convertOptions(options));
 };
 
-function drawChart7() {
-  var data = google.visualization.arrayToDataTable([
-    ['City', '2010 Population', '2000 Population'],
-    ['New York City, NY', 8175000, 8008000],
-    ['Los Angeles, CA', 3792000, 3694000],
-    ['Chicago, IL', 2695000, 2896000],
-    ['Houston, TX', 2099000, 1953000],
-    ['Philadelphia, PA', 1526000, 1517000]
-  ]);
+function showSchoolOccupation() {
+    fetch('http://localhost:8081/require/classOccupacy/all').then(response => response.json()).then(data => {
+        console.table(data);
+        var chartData = new google.visualization.DataTable();
+        chartData.addColumn('string', 'Class');
+        chartData.addColumn('number', 'Students');
 
-  var options = {
-    title: 'Population of Largest U.S. Cities',
-    chartArea: { width: '50%' },
-    hAxis: {
-      title: 'Total Population',
-      minValue: 0,
-    },
-    vAxis: {
-      title: 'City'
+        data.forEach(entry => {
+            chartData.addRow([entry.class, parseInt(entry.students)]);
+        });
+
+        var options = {
+            title: 'School Occupation',
+            chartArea: { width: '70%', height: '70%' },
+            hAxis: {
+                title: 'Class'
+            },
+            vAxis: {
+                title: 'Students'
+            },
+            explorer: { axis: 'horizontal' }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('school_occupation'));
+        chart.draw(chartData, options);
     }
-  };
-
-  var chart = new google.visualization.BarChart(document.getElementById('barchart_values'));
-  chart.draw(data, options);
+    );
 }
 
-function drawChart8() {
-  var data = google.visualization.arrayToDataTable([
-    ['Year', 'Sales', 'Expenses'],
-    ['2013', 1000, 400],
-    ['2014', 1170, 460],
-    ['2015', 660, 1120],
-    ['2016', 1030, 540]
-  ]);
+function airQuality() {
+  fetch('http://localhost:8081/require/AirQuality/all')
+      .then(response => response.json())
+      .then(data => {
+        console.table(data);
+        var chartData = new google.visualization.DataTable();
+        chartData.addColumn('string', 'Date');
+        chartData.addColumn('number', 'Temperature');
+        chartData.addColumn('number', 'Humidity');
 
-  var options = {
-    title: 'Company Performance',
-    curveType: 'function',
-    legend: { position: 'bottom' }
-  };
+        data.forEach(entry => {
+          chartData.addRow([entry.date, parseInt(entry.temperature), parseInt(entry.humidity)]);
+        });
 
-  var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        var options = {
+          title: 'Air Quality Index in Dublin',
+          chartArea: { width: '70%', height: '70%' },
+          hAxis: {
+            title: 'Date'
+          },
+          vAxes: [
+            { title: 'Temperature' },
+            { title: 'Humidity' }
+          ],
+          series: {
+            0: { targetAxisIndex: 0 },
+            1: { targetAxisIndex: 1 }
+          },
+          explorer: { axis: 'horizontal' }
+        };
 
-  chart.draw(data, options);
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(chartData, options);
+      });
 }

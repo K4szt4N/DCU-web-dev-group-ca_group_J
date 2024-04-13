@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>EE417</title>
+  <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}">
+  <script th:src="@{/scripts/script.js}"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line'] });
+    google.charts.setOnLoadCallback(drawChart7);
+    google.charts.setOnLoadCallback(airQuality);
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="index">
+            <img src="assets/icons8-home.svg" alt="home icon">
+          </a>
+        </li>
+        <li>
+          <a href="dashboard">
+            <img src="assets/icons8-board.svg" alt="dashboard icon">
+          </a>
+        </li>
+        <li>
+          <a href="login">
+          <img src="assets/icons8-login.svg" alt="login icon">
+          </a>
+        </li>
+        <li>
+          <a href="register">
+            <img src="assets/icons8-register.svg" alt="register icon">
+          </a>
+        </li>
+        <li>
+          <a href="contactl">
+            <img src="assets/icons8-contact.svg" alt="contact icon">
+          </a>
+        </li>
+        <li>
+          <a href="team">
+            <img src="assets/icons8-team.svg" alt="team icon">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="dashboard">
+      <div class="search_bar">
+        <button>
+          <img src="assets/icons8-search.svg" alt="search icon">
+        </button>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="main-tile">
+        <h1>
+          Home
+        </h1>
+      </div>
+      <div class="container">
+        <div class="widget widget-dashboard">
+          <h2>Table 1</h2>
+          <div id="barchart_values" style="width: 500px; height: 300px;"></div>
+        </div>
+        <div class="widget">
+          <h2>Air Quality</h2>
+            <div id="curve_chart" style="width:500px; height: 300px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
