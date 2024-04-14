@@ -10,9 +10,6 @@
   <script th:src="@{/scripts/script.js}"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line'] });
-    google.charts.setOnLoadCallback(showSchoolOccupation);
-    google.charts.setOnLoadCallback(airQuality);
   </script>
 </head>
 
@@ -52,30 +49,46 @@
         </li>
       </ul>
     </nav>
+    <div class="homepage">
+      <h1>DCU Information System</h1>
+      <p>Feeling overwhelmed by university life? Welcome to your one-stop dashboard for navigating campus like a pro! Here, you'll find real-time data on everything from temperature and humidity (perfect for outfit planning) to average student age groups (get ready to mingle!). Plus, we've got you covered on your commute with up-to-date bicycle travel times. But that's not all! This dashboard also gives you the inside scoop on class occupancy levels, so you can snag that perfect seat before heading out. Stay informed, make smart choices, and conquer your university experience - all with a single glance!</p>
+      <p>This dashboard was created as a group effort of EE417 students, as their group assignment for this module.</p>
+      <!-- Dashboard page content -->
+      <h2>Welcome to the dashboard selection page, please feel free to browse.</h2>
+      <p>Dashboard links:</p>
+      <ul>
+        <li><a href="classOccupancy">Class Occupancy</a></li>
+        <li><a href="airQuality">Temperature and humidity in buildings</a></li>
+        <li><a href="bikeTime">Bicycle travel times to DCU</a></li>
+        <li><a href="studentAge">Student average age</a></li>
+        <li><a href="performance">Study performance</a></li>
+      </ul>
 
-    <div class="dashboard">
-      <div class="search_bar">
-        <button>
-          <img src="assets/icons8-search.svg" alt="search icon">
-        </button>
-        <input type="text" placeholder="Search">
-      </div>
-      <div class="main-tile">
-        <h1>
-          Home
-        </h1>
-      </div>
-      <div class="container">
-        <div class="widget widget-dashboard" onclick="window.location='http://localhost:8081/classOccupancy'">
-          <h2>Class Occupancy</h2>
-          <div id="school_occupation" style="width: 100%; height: 70%;"></div>
-        </div>
-        <div class="widget" onclick="window.location='http://localhost:8081/airQuality'">
-          <h2>Air Quality</h2>
-            <div id="curve_chart" style="width:100%; height: 70%"></div>
-        </div>
-      </div>
+      <section id="class-occupancy">
+        <h3>Class Occupancy</h3>
+        <p>Never get stuck standing in a crowded lecture hall again. See class occupancy levels to find the perfect seat before heading out.</p>
+      </section>
+
+      <section id="building-climate">
+        <h3>Building Climate</h3>
+        <p>Stay comfortable throughout the day. Check real-time temperature and humidity readings for different buildings on campus, so you can dress accordingly.</p>
+      </section>
+
+      <section id="bicycle-commutes">
+        <h3>Bicycle Commutes</h3>
+        <p>Plan your ride to campus like a pro. The dashboard provides up-to-date bicycle travel times, helping you factor weather and traffic into your commute.</p>
+      </section>
+
+      <section id="student-age">
+        <h3>Student Age Groups</h3>
+        <p>Discover the demographics of your campus. See the average student age distribution across different years, helping you connect with peers who share similar life stages.</p>
+      </section>
+
+      <section id="study-performance">
+        <h3>Study Performance Insights</h3>
+        <p>Stay ahead of the curve. The dashboard provides insights into study performance trends, allowing you to identify areas for improvement and optimize your learning strategies.</p>
+      </section>
     </div>
-  </div>
-</body>
+    </body>
+
 </html>

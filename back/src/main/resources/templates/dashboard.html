@@ -2,86 +2,97 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <title>EE417</title>
-  <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}" />
-  <script th:src="@{/scripts/script.js}"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line', 'table'] });
-    google.charts.setOnLoadCallback(Bycycle);
-    google.charts.setOnLoadCallback(StudentAge);
-    google.charts.setOnLoadCallback(Study);
-  </script>
+    <meta charset="UTF-8">
+    <title>EE417</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}"/>
+    <script th:src="@{/scripts/script.js}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['corechart', 'bar', 'line', 'table']});
+        google.charts.setOnLoadCallback(Bycycle);
+        google.charts.setOnLoadCallback(StudentAge);
+        google.charts.setOnLoadCallback(Study);
+        google.charts.setOnLoadCallback(showSchoolOccupation);
+        google.charts.setOnLoadCallback(airQuality);
+    </script>
 </head>
 
 <body>
-  <div class="main">
+<div class="main">
     <nav class="nav">
-      <ul>
-        <li>
-          <a href="/">
-            <img src="assets/icons8-home.svg" alt="home icon">
-          </a>
-        </li>
-        <li>
-          <a href="dashboard">
-            <img src="assets/icons8-board.svg" alt="dashboard icon">
-          </a>
-        </li>
-        <li>
-          <a href="login">
-            <img src="assets/icons8-login.svg" alt="login icon">
-          </a>
-        </li>
-        <li>
-          <a href="register">
-            <img src="assets/icons8-register.svg" alt="register icon">
-          </a>
-        </li>
-        <li>
-          <a href="contact">
-            <img src="assets/icons8-contact.svg" alt="contact icon">
-          </a>
-        </li>
-        <li>
-          <a href="team">
-            <img src="assets/icons8-team.svg" alt="team icon">
-          </a>
-        </li>
-      </ul>
+        <ul>
+            <li>
+                <a href="/">
+                    <img src="assets/icons8-home.svg" alt="home icon">
+                </a>
+            </li>
+            <li>
+                <a href="dashboard">
+                    <img src="assets/icons8-board.svg" alt="dashboard icon">
+                </a>
+            </li>
+            <li>
+                <a href="login">
+                    <img src="assets/icons8-login.svg" alt="login icon">
+                </a>
+            </li>
+            <li>
+                <a href="register">
+                    <img src="assets/icons8-register.svg" alt="register icon">
+                </a>
+            </li>
+            <li>
+                <a href="contact">
+                    <img src="assets/icons8-contact.svg" alt="contact icon">
+                </a>
+            </li>
+            <li>
+                <a href="team">
+                    <img src="assets/icons8-team.svg" alt="team icon">
+                </a>
+            </li>
+        </ul>
     </nav>
 
     <div class="dashboard">
-      <div class="search_bar">
-        <button>
-          <img src="assets/icons8-search.svg" alt="search icon">
-        </button>
-        <input type="text" placeholder="Search">
-      </div>
-      <div class="main-tile">
-        <h1>
-          Main Dashboard
-        </h1>
-      </div>
-      <div class="dashboard-containers">
-        <div class="container-dashboard">
-          <div class="div1" onclick="window.location='http://localhost:8081/bikeTime'">
-            <h2>Bike Time by Age Group</h2>
-            <div id="top_x_div" style="width: 300px; height: 300px"></div>
-          </div>
-          <div class="div2"  onclick="window.location='http://localhost:8081/performance'">
-            <h2>Study Performance</h2>
-            <div id="table_div" style="height: 300px; padding-bottom: 30px;"></div>
-          </div>
-          <div class="div3" onclick="window.location='http://localhost:8081/studentAge'">
-            <h2>Average Age Of Student Over the Years</h2>
-            <div id="line_top_x"></div>
-          </div>
+        <div class="search_bar">
+            <button>
+                <img src="assets/icons8-search.svg" alt="search icon">
+            </button>
+            <input type="text" placeholder="Search">
         </div>
-      </div>
+        <div class="main-tile">
+            <h1>Dashboard
+            </h1>
+        </div>
+        <div class="dashboard-containers">
+            <div class="container-dashboard">
+                <div class="div1" onclick="window.location='http://localhost:8081/bikeTime'">
+                    <h2>Bike Time by Age Group</h2>
+                    <div id="top_x_div" style="width: 300px; height: 300px"></div>
+                </div>
+                <div class="div2" onclick="window.location='http://localhost:8081/performance'">
+                    <h2>Study Performance</h2>
+                    <div id="table_div" style="height: 300px; padding-bottom: 30px;"></div>
+                </div>
+                <div class="div3" onclick="window.location='http://localhost:8081/studentAge'">
+                    <h2>Average Age Of Student Over the Years</h2>
+                    <div id="line_top_x"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="widget widget-dashboard" onclick="window.location='http://localhost:8081/classOccupancy'">
+                <h2>Class Occupancy</h2>
+                <div id="school_occupation" style="width: 100%; height: 70%;"></div>
+            </div>
+            <div class="widget" onclick="window.location='http://localhost:8081/airQuality'">
+                <h2>Temperature and Humidity</h2>
+                <div id="curve_chart" style="width:100%; height: 70%"></div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 </body>
 
 </html>
