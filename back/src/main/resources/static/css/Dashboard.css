@@ -164,6 +164,8 @@ body {
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    margin-left: auto;
+  	margin-right: auto;
 }
 
 .div1 {
