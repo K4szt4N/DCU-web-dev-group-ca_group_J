@@ -51,14 +51,3 @@ This project uses the following dependencies:
 - Spring Boot Starter Test: For testing Spring Boot applications.
 - Jackson Core: For JSON processing.
 
-
-
-## Deployment
-
-We have hosted a tomcat server on AWS infrastructure.
-
-link: http://51.20.185.79:8080/manager/html  
-login: admin
-password: admin
-
-
