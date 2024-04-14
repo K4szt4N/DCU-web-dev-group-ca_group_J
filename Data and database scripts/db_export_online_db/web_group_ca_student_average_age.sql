@@ -1,0 +1,54 @@
+CREATE DATABASE  IF NOT EXISTS `web_group_ca_group_j` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `web_group_ca_group_j`;
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+--
+-- Host: localhost    Database: web_group_ca_group_j
+-- ------------------------------------------------------
+-- Server version	8.0.36
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `student_average_age`
+--
+
+DROP TABLE IF EXISTS `student_average_age`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `student_average_age` (
+  `row_id` int NOT NULL AUTO_INCREMENT,
+  `year` int NOT NULL,
+  `average_age` decimal(5,2) NOT NULL,
+  PRIMARY KEY (`row_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_average_age`
+--
+
+LOCK TABLES `student_average_age` WRITE;
+/*!40000 ALTER TABLE `student_average_age` DISABLE KEYS */;
+INSERT INTO `student_average_age` VALUES (1,1992,20.20),(2,1993,20.20),(3,1994,20.40),(4,1995,21.00),(5,1996,21.10),(6,1997,20.90),(7,1998,22.20),(8,1999,24.20),(9,2000,24.50),(10,2001,24.10),(11,2002,23.70),(12,2003,24.50),(13,2004,24.10),(14,2005,25.60),(15,2006,24.70),(16,2007,23.60),(17,2008,23.60),(18,2009,25.10),(19,2010,24.60),(20,2011,25.60),(21,2012,23.60),(22,2013,22.10),(23,2014,26.30),(24,2015,25.40),(25,2016,25.60),(26,2017,24.80),(27,2018,24.50),(28,2019,25.90),(29,2020,25.50),(30,2021,27.40),(31,2022,25.90),(32,2023,25.60),(33,2024,26.20);
+/*!40000 ALTER TABLE `student_average_age` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-04-07 14:50:49
