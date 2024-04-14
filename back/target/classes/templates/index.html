@@ -8,12 +8,41 @@
   <title>EE417</title>
   <link rel="stylesheet" type="text/css" th:href="@{css/Dashboard.css}">
   <script th:src="@{/scripts/script.js}"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{css/home_style.css}">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart', 'bar', 'line'] });
-    google.charts.setOnLoadCallback(showSchoolOccupation);
-    google.charts.setOnLoadCallback(airQuality);
   </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Poppins:wght@100&family=Quicksand:wght@300&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons (Font Awesome Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 </head>
 
 <body>
@@ -52,30 +81,52 @@
         </li>
       </ul>
     </nav>
+    <div class="container">
+      <video autoplay loop class="video" muted plays-inline>
+        <source src="assets/background.mp4" type="video/mp4" />
+      </video>
 
-    <div class="dashboard">
-      <div class="search_bar">
-        <button>
-          <img src="assets/icons8-search.svg" alt="search icon">
-        </button>
-        <input type="text" placeholder="Search">
+      <div class="logo">
+        <img src="assets/dublin-city-university-dcu-seeklogo.svg" alt="logo" />
       </div>
-      <div class="main-tile">
-        <h1>
-          Home
-        </h1>
+      <div class="content">
+        <h1>Smart DCU Dashboard</h1>
+        <p>
+          Feeling overwhelmed by university life? Welcome to your one-stop
+          dashboard for navigating campus like a pro! Here, you'll find
+          real-time data on everything from temperature and humidity (perfect
+          for outfit planning) to average student age groups (get ready to
+          mingle!). Plus, we've got you covered on your commute with up-to-date
+          bicycle travel times. But that's not all! This dashboard also gives
+          you the inside scoop on class occupancy levels, so you can snag that
+          perfect seat before heading out. Stay informed, make smart choices,
+          and conquer your university experience - all with a single glance!
+        </p>
+        <p id="heading">Metrics Available</p>
       </div>
-      <div class="container">
-        <div class="widget widget-dashboard" onclick="window.location='http://localhost:8081/classOccupancy'">
-          <h2>Class Occupancy</h2>
-          <div id="school_occupation" style="width: 100%; height: 70%;"></div>
+      <div class="dasboard-list">
+        <div class="list">
+          <i id="icon" class="fa fa-group"> </i>
+          <p>Class Occupancy</p>
         </div>
-        <div class="widget" onclick="window.location='http://localhost:8081/airQuality'">
-          <h2>Air Quality</h2>
-            <div id="curve_chart" style="width:100%; height: 70%"></div>
+        <div class="list">
+          <i id="icon" class="fa fa-thermometer-full"> </i>
+          <p>Temperature/Humidity</p>
+        </div>
+        <div class="list">
+          <i id="icon" class="fa fa-motorcycle"> </i>
+          <p>Cycle Travel Times</p>
+        </div>
+        <div class="list">
+          <i id="icon" class="fa fa-female"> </i>
+          <p>Student Average Age</p>
+        </div>
+        <div class="list">
+          <i id="icon" class="fa fa-line-chart"> </i>
+          <p>Study Performance</p>
         </div>
       </div>
     </div>
-  </div>
-</body>
+    </body>
+
 </html>

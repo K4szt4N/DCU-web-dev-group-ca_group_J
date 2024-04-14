@@ -57,7 +57,7 @@ function BycycleWidget() {
 
             // Define chart options
             var options = {
-                title: 'Air Quality Index in Dublin',
+                title: 'Bike Time by Age Group',
                 curveType: 'function', // Add this line
                 chartArea: { width: '70%', height: '70%' },
                 hAxis: {
@@ -104,10 +104,12 @@ function StudentAge() {
         width: 620,
         height: 300,
         hAxis: {
+            title: 'Year',
           side: 'bottom',
           format: '0',
         },
         vAxis: {
+            title: 'Average Age',
           side: 'top',
           format: 'decimal',
         }
@@ -140,16 +142,16 @@ function StudentAgeWidget() {
 
             // Define chart options
             var options = {
-                title: 'Air Quality Index in Dublin',
+                title: 'Average Age of Students by Year',
                 curveType: 'function', // Add this line
                 chartArea: { width: '70%', height: '70%' },
                 hAxis: {
-                    title: 'Date'
+                    title: 'Date',
+                    format: '0'
                 },
-                vAxes: [
-                    { title: 'Temperature' },
-                    { title: 'Humidity' }
-                ],
+                vAxes: {
+                    0: { title: 'Average Age' }
+                },
                 series: {
                     0: { targetAxisIndex: 0 },
                     1: { targetAxisIndex: 1 }
@@ -263,7 +265,8 @@ function showSchoolOccupation() {
               title: 'School Occupation by Room Number',
               chartArea: { width: '70%', height: '70%' },
               hAxis: {
-                  title: 'Room Number'
+                  title: 'Room Number',
+                  format: '0'
               },
               vAxis: {
                   title: 'Number of Students'
@@ -330,7 +333,7 @@ function airQuality() {
         });
 
         var options = {
-          title: 'Air Quality Index in Dublin',
+          title: 'Temperature and Humidity in Dublin',
           chartArea: { width: '70%', height: '70%' },
           hAxis: {
             title: 'Date'
@@ -365,10 +368,11 @@ function airQualityWidget() {
             });
 
             var options = {
-                title: 'Air Quality Index in Dublin',
+                title: 'Temperature and Humidity in Dublin',
                 chartArea: { width: '70%', height: '70%' },
                 hAxis: {
-                    title: 'Date'
+                    title: 'Date',
+                    format: '0'
                 },
                 vAxes: [
                     { title: 'Temperature' },
